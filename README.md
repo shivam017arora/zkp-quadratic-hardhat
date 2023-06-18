@@ -4,12 +4,19 @@
 
 Zero-Knowledge Proofs allow a prover to demonstrate knowledge of something to a verifier without revealing the actual information. In this context, the prover can generate an off-chain proof that convinces the verifier of the solution's validity without disclosing any sensitive data.
 
-   ________     _________     _________
-  /        \   /         \   /         \
- | Prover   | | Verifier  | | Prover    |
- |          | |           | |           |
- |    P     | |     V     | |    P'     |
-  \________/   \_________/   \_________/
+```
+
+    Prover         Smart Contract (Verifier)
+  ___________        ________________
+ |           |      |                |
+ |           |      |                |
+ |           |      |                |
+ |    Prove  |      |    Verify      |
+ |    Proof  |<---->|    Solution    |
+ |           |      |                |
+ |___________|      |________________|
+
+```
 
 
 This repository contains an implementation of a Solidity smart contract that acts as a verifier for zero-knowledge proofs (zk-SNARK) without revealing any information about the solution. The prover can generate an off-chain proof and submit it to the verifier smart contract to prove the solution without disclosing any sensitive data.
@@ -25,7 +32,7 @@ The implementation in this repository leverages the Circom domain-specific langu
 
 To use this implementation, follow these steps:
 
-1. Clone the repository: `git clone http://`
+1. Clone the repository: `git clone https://github.com/shivam017arora/zkp-quadratic-hardhat.git`
 2. Install the required dependencies: `npm install` or `yarn install` (recommended)
 3. Run the tests: `yarn hardhat test`
 
